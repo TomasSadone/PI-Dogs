@@ -16,7 +16,6 @@ const getTemperamentsFirstTime = async () => {
 
     const arrOfRawTemps = rawTemperament.split(',').map((temp) => temp.trim());
     // arrOfRawTemps = [stubborn, happy]
-
     arrOfRawTemps.forEach((rawTemperament) => {
       if (!temperaments.find((temperament) => temperament === rawTemperament)) {
         temperaments.push(rawTemperament);

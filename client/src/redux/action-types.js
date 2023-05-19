@@ -1,0 +1,9 @@
+export const GET_ALL_DOGS = 'GET_ALL_DOGS';
+export const SET_SHOWN_DOGS = 'SET_SHOWN_DOGS';
+
+export const POST_DOG = 'POST_DOG';
+export const GET_ALL_TEMPS = 'GET_ALL_TEMPS';
+export const FILTER_BY_TEMPS = 'FILTER_BY_TEMPS';
+export const FILTER_BY_USER_CREATED = 'FILTER_BY_USER_CREATED';
+export const ORDER_BY_WEIGHT = 'ORDER_BY_WEIGHT';
+export const ORDER_APHABETICALLY = 'ORDER_APHABETICALLY';
