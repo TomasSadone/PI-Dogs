@@ -18,7 +18,6 @@ export const Detail = () => {
       setLoading(false);
     }
   }, [id]);
-  console.log(dog.image);
   useEffect(() => {
     getDog();
   }, [getDog]);
@@ -27,7 +26,7 @@ export const Detail = () => {
       {error && <div>error component</div>}
       {loading && <div>loading component</div>}
       {!loading && !error && (
-        <div>
+        <div className='flow'>
           {dog.image && (
             <img
               style={{ height: '300px', width: '300px' }}

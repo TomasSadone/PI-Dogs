@@ -1,0 +1,38 @@
+.navbar {
+  position: sticky;
+  z-index: 999;
+  top: 0;
+  background-color: var(--color-background);
+  padding: 0.5rem;
+}
+
+.navlink {
+  color: var(--color-text);
+}
+.activeNavlink {
+  color: var(--color-dark-green);
+}
+
+/* .logoContainer {
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+} */
+
+.logo {
+  aspect-ratio: 1/1;
+  width: 60px;
+}
+
+.title {
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --gap: 0.85rem;
+  }
+  .logo {
+    width: 40px;
+  }
+}

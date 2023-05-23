@@ -1,0 +1,23 @@
+.search {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+}
+.label {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+@media (min-width: 720px) {
+  .search {
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+  }
+
+  .form {
+    justify-self: end;
+  }
+  .input {
+    width: auto;
+  }
+}

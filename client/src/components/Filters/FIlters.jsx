@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { sliceIntoPages } from '../../helpers/sliceIntoPages';
 import { setDogPages, setPageToOne } from '../../redux/actions';
+import style from './filters.module.css';
 
 export const Filters = ({ setError, setLoading }) => {
   const { allDogs, temperaments, search } = useSelector((state) => state);
@@ -15,6 +16,7 @@ export const Filters = ({ setError, setLoading }) => {
 
   useEffect(() => {
     applyFilters();
+    // eslint-disable-next-line
   }, [search, allDogs]);
 
   const handleFiltersChange = (event) => {
@@ -106,39 +108,54 @@ export const Filters = ({ setError, setLoading }) => {
   };
 
   return (
-    <div>
-      <label htmlFor='temperament'>Filtrar por temperamento</label>
-      <select
-        value={filters.temperaments}
-        onChange={handleFiltersChange}
-        name='temperaments'
-        id=''
-      >
-        <option>Todos</option>
-        {temperaments.map((temperament) => (
-          <option value={temperament.name} key={temperament.id}>
-            {temperament.name}
-          </option>
-        ))}
-      </select>
-      <label htmlFor='user_created'>Filtrar segun origen</label>
-      <select
-        value={filters.user_created}
-        onChange={handleFiltersChange}
-        name='user_created'
-        id=''
-      >
-        <option value='Todos'>Todos</option>
-        <option value='false'>Base de datos</option>
-        <option value='true'>Creados por el usuario</option>
-      </select>
-      <label htmlFor='alphabeticOrder'>Orden</label>
-      <select onChange={handleFiltersChange} name='order' id=''>
-        <option value='Alfabetico ascendente'>Alfabetico ascendente</option>
-        <option value='Alfabetico descendente'>Alfabetico descendente</option>
-        <option value='Peso ascendente'>Peso ascendente</option>
-        <option value='Peso descendente'>Peso descendente</option>
-      </select>
+    <div className={style.layout}>
+      <div className={style.filters}>
+        <div className='grid'>
+          <label className='fw500 fsLarge' htmlFor='temperament'>
+            Filtrar por temperamento
+          </label>
+          <select
+            placeholder='Temperamento'
+            value={filters.temperaments}
+            onChange={handleFiltersChange}
+            name='temperaments'
+            id=''
+          >
+            <option>Todos</option>
+            {temperaments.map((temperament) => (
+              <option value={temperament.name} key={temperament.id}>
+                {temperament.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className='grid'>
+          <label className='fw500 fsLarge' htmlFor='user_created'>
+            Filtrar segun origen
+          </label>
+          <select
+            value={filters.user_created}
+            onChange={handleFiltersChange}
+            name='user_created'
+            id=''
+          >
+            <option value='Todos'>Todos</option>
+            <option value='false'>Base de datos</option>
+            <option value='true'>Creados por el usuario</option>
+          </select>
+        </div>
+      </div>
+      <div className='grid'>
+        <label className='fw500 fsLarge' htmlFor='alphabeticOrder'>
+          Orden
+        </label>
+        <select onChange={handleFiltersChange} name='order' id=''>
+          <option value='Alfabetico ascendente'>Alfabetico ascendente</option>
+          <option value='Alfabetico descendente'>Alfabetico descendente</option>
+          <option value='Peso ascendente'>Peso ascendente</option>
+          <option value='Peso descendente'>Peso descendente</option>
+        </select>
+      </div>
     </div>
   );
 };

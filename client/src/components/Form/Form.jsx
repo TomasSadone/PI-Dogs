@@ -90,8 +90,8 @@ export const Form = () => {
     return false;
   };
   return (
-    <div>
-      <form onSubmit={handleSubmit} action=''>
+    <div className=''>
+      <form className='flow' onSubmit={handleSubmit} action=''>
         <label htmlFor='name'>Raza:</label>
         <input
           value={dogData.name}

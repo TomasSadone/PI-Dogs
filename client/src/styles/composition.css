@@ -1,0 +1,8 @@
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-titles-sub);
+}

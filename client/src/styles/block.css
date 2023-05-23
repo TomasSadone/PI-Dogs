@@ -1,0 +1,41 @@
+.button {
+  color: white;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-dark-green),
+    var(--color-light-green)
+  );
+  padding: 0.5rem 1rem;
+}
+
+/* hero images */
+.heroImg {
+  object-fit: cover;
+  width: 100%;
+  position: relative;
+}
+.imgContainer {
+  position: relative;
+}
+.heroContent {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  display: grid;
+  place-content: center;
+  --flow-space: 2rem;
+}
+
+.heroFullHeight {
+  height: 100vh;
+  height: 100dvh;
+}
+
+/* INPUTS */
+.input {
+  width: 100%;
+  border: 1px solid rgba(85 85 85 / 0.5);
+  border-radius: 8px;
+  padding: 0.15rem 0.5rem;
+}

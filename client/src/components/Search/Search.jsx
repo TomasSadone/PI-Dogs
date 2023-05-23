@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setDogPages, setPageToOne, setSearch } from '../../redux/actions';
-import { sliceIntoPages } from '../../helpers/sliceIntoPages';
+import { useDispatch } from 'react-redux';
+import { setPageToOne, setSearch } from '../../redux/actions';
+import styles from './search.module.css';
 
 const endpoint = 'http://localhost:3001/dogs';
 
@@ -12,7 +12,6 @@ export const Search = ({ setError, setLoading }) => {
   const [inputValue, setInputValue] = useState('');
   const [existingSearch, setExistingSearch] = useState(false);
 
-  const { allDogs } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   const searchValidation = (search) => {
@@ -43,7 +42,6 @@ export const Search = ({ setError, setLoading }) => {
       try {
         const { data } = await axios(`${endpoint}/${value}`);
         dispatch(setPageToOne());
-        // dispatch(setDogPages([data]));
         dispatch(setSearch(data));
         setLoading(false);
       } catch (error) {
@@ -57,7 +55,6 @@ export const Search = ({ setError, setLoading }) => {
         const { data } = await axios.get(endpoint, {
           params: { breed: value },
         });
-        const paginatedDogs = sliceIntoPages(data);
         dispatch(setPageToOne());
         dispatch(setSearch(data));
         setLoading(false);
@@ -76,18 +73,21 @@ export const Search = ({ setError, setLoading }) => {
     setExistingSearch(false);
     setInputValue('');
     setError({ error: false, message: '' });
-    const pages = sliceIntoPages(allDogs);
     dispatch(setPageToOne());
-
-    // dispatch(setDogPages(pages));
     dispatch(setSearch([]));
   };
 
   return (
-    <div>
-      <label>Encuentra a tu compañero ideal</label>
-      <form onSubmit={handleSubmit} action=''>
-        <input value={inputValue} onChange={handleInputChange} type='text' />
+    <div className={`${styles.search}`}>
+      <label className={styles.label}>Encuentra a tu compañero ideal:</label>
+      <form className={styles.form} onSubmit={handleSubmit} action=''>
+        <input
+          placeholder='Buscar...'
+          className={'input'}
+          value={inputValue}
+          onChange={handleInputChange}
+          type='text'
+        />
       </form>
       {searchError ? (
         <span>La busqueda debe ser de solo letras, o solo numeros</span>

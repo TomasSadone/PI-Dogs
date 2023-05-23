@@ -7,6 +7,10 @@ import { Navbar } from './components/Navbar/Navbar';
 import { Home } from './components/Home/Home';
 import { Form } from './components/Form/Form';
 import { Detail } from './components/Detail/Detail';
+import './styles/composition.css';
+import './styles/css-reset.css';
+import './styles/utils.css';
+import './styles/block.css';
 
 function App() {
   const { pathname } = useLocation();
@@ -14,7 +18,7 @@ function App() {
     <Provider store={store}>
       {pathname !== '/' && <Navbar />}
       {/* quizas la navbar no vaya aca y vaya en una home solo */}
-      <div className='App'>
+      <div className='App flow'>
         <Routes>
           <Route path='/' element={<Landing />} />
           <Route path='/home' element={<Home />} />

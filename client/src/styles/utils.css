@@ -1,0 +1,215 @@
+:root {
+  --color-background: #fcfcfc;
+  --color-titles-sub: #2a2a2a;
+  --color-text: #555555;
+  --color-light-green: #56c596;
+  --color-dark-green: #329d9c;
+  --gap: 1.5rem;
+  --minWidth: 240px;
+  /* --color-dark: #424e6e;
+  --color-medium: #586994;
+  --color-light: #ced8f2;
+  --color-neutral-light: #dbdbdb;
+  --color-neutral-dark: #595959;
+  --gap: 1.5rem;
+  --minWidth: 240px; */
+}
+
+/* FONT SIZES */
+
+.fsSmall {
+  font-size: 14px;
+}
+
+.fsMedium {
+  font-size: 16px;
+}
+
+.fsLarge {
+  font-size: 18px;
+}
+
+.fsXl {
+  font-size: 24px;
+}
+
+.fsXxl {
+  font-size: 64px;
+}
+
+/* FONT WEIGHTS */
+
+.fw300 {
+  font-weight: 300;
+}
+.fw400 {
+  font-weight: 400;
+}
+
+.fw500 {
+  font-weight: 500;
+}
+
+.fw600 {
+  font-weight: 600;
+}
+
+/* FONT ALIGN */
+
+.textAlignCenter {
+  text-align: center;
+}
+
+/* MARGINS */
+
+.mt1 {
+  margin-top: 1rem;
+}
+.mt125 {
+  margin-top: 1.25rem;
+}
+
+.mt15 {
+  margin-top: 1.5rem;
+}
+.mt2 {
+  margin-top: 2rem;
+}
+
+.mt25 {
+  margin-top: 2.5rem;
+}
+
+/* CONTAINER */
+
+.container {
+  max-width: 1024px;
+  width: 90%;
+  margin-inline: auto;
+}
+
+/* COLORS */
+
+.colorBackground {
+  color: var(--color-background);
+}
+
+.colorTitles {
+  color: var(--color-titles-sub);
+}
+.colorTitlesWhite {
+  color: var(--color-background);
+}
+
+.colorText {
+  color: var(--color-text);
+}
+
+.colorLightGreen {
+  color: var(--color-light-green);
+}
+
+.colorDarkGreen {
+  color: var(--color-dark-green);
+}
+
+/* UPPERCASE */
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* FLEX AND GRID */
+
+.flex {
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+}
+
+.flexBetween {
+  justify-content: space-between;
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+}
+
+.flexCenter {
+  align-items: center;
+  display: flex;
+  gap: var(--gap);
+}
+
+.grid {
+  display: grid;
+}
+
+.placeContentCenter {
+  place-content: center;
+  display: grid;
+}
+
+.gridAutoColumns {
+  grid-template-columns: repeat(auto-fit, minmax(var(--minWidth), 1fr));
+  display: grid;
+}
+
+.gridAutoColumnsItemLarge {
+  --minWidth: 300px;
+}
+
+/* GAPS */
+
+.gap1 {
+  gap: 1rem;
+}
+
+.gap2 {
+  gap: 2rem;
+}
+
+.gap3 {
+  gap: 3rem;
+}
+
+.gap4 {
+  gap: 4rem;
+}
+
+/* BUTTON */
+
+/* .btn {
+  padding: 0.5em 1em;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.btnPrimary {
+  border: 3px solid var(--color-medium);
+  background-color: white;
+  color: var(--color-medium);
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+}
+
+.btnPrimary:hover {
+  background-color: var(--color-medium);
+  color: white;
+}
+
+.btnPrimary100 {
+  width: 100%;
+} */
+
+/* BLOCK */
+
+.imageContainer {
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  /* position: relative; */
+}
+@media (max-width: 600px) {
+  .fsXxl {
+    font-size: 48px;
+  }
+}
