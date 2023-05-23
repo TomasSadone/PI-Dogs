@@ -1,9 +1,8 @@
-export const GET_ALL_DOGS = 'GET_ALL_DOGS';
-export const SET_SHOWN_DOGS = 'SET_SHOWN_DOGS';
-
+export const SET_ALL_DOGS = 'SET_ALL_DOGS';
+export const SET_DOGS_PAGES = 'SET_DOGS_PAGES';
 export const POST_DOG = 'POST_DOG';
 export const GET_ALL_TEMPS = 'GET_ALL_TEMPS';
-export const FILTER_BY_TEMPS = 'FILTER_BY_TEMPS';
-export const FILTER_BY_USER_CREATED = 'FILTER_BY_USER_CREATED';
-export const ORDER_BY_WEIGHT = 'ORDER_BY_WEIGHT';
-export const ORDER_APHABETICALLY = 'ORDER_APHABETICALLY';
+export const SET_NEXT_PAGE = 'SET_NEXT_PAGE';
+export const SET_PREV_PAGE = 'SET_PREV_PAGE';
+export const SET_PAGE_TO_ONE = 'SET_PAGE_TO_ONE';
+export const SET_SEARCH = 'SET_SEARCH';

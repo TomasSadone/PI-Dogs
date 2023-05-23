@@ -5,6 +5,8 @@ import { Landing } from './components/Landing/Landing';
 import store from './redux/store';
 import { Navbar } from './components/Navbar/Navbar';
 import { Home } from './components/Home/Home';
+import { Form } from './components/Form/Form';
+import { Detail } from './components/Detail/Detail';
 
 function App() {
   const { pathname } = useLocation();
@@ -16,6 +18,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Landing />} />
           <Route path='/home' element={<Home />} />
+          <Route path='/post' element={<Form />} />
+          <Route path='/dog/:id' element={<Detail />} />
         </Routes>
       </div>
     </Provider>
