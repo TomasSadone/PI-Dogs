@@ -1,0 +1,5 @@
+.layout {
+  gap: 1rem;
+  row-gap: 3rem;
+  display: grid;
+}

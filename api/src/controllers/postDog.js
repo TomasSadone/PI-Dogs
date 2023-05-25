@@ -54,7 +54,7 @@ const postDog = async (
     const [newTemperament] = await Temperament.findOrCreate({
       where: { name: temperament },
       defaults: {
-        temperament,
+        name: temperament.trim(),
       },
     });
     await dog.addTemperament(newTemperament);

@@ -38,7 +38,6 @@ router.get('/:breedId', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const { name, image, height, weight, life_span, temperaments } = req.body;
-    const id = await (await getDogs()).pop().id;
     if (
       !name ||
       !image ||

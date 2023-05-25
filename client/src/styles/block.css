@@ -1,4 +1,5 @@
 .button {
+  border: none;
   color: white;
   border-radius: 8px;
   background-image: linear-gradient(
@@ -7,6 +8,15 @@
     var(--color-light-green)
   );
   padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.button:disabled,
+.button[disabled] {
+  /* border: 1px solid #999999; */
+  /* color: #666666; */
+  background-color: #cccccc;
+  background-image: none;
 }
 
 /* hero images */
@@ -37,5 +47,29 @@
   width: 100%;
   border: 1px solid rgba(85 85 85 / 0.5);
   border-radius: 8px;
+  background-color: var(--color-background);
   padding: 0.15rem 0.5rem;
+
+  transition: all 0.3s;
+}
+.input:focus {
+  outline: 1px solid rgba(85 85 85 / 1);
+  border: 1px solid rgba(85 85 85 / 0.5);
+}
+
+/*  MESSAGGES */
+
+.errorMessagge {
+  color: var(--color-error);
+}
+
+.successMessagge {
+  color: var(--color-light-green);
+}
+
+/* HR */
+hr {
+  background-color: #b7b7b7;
+  height: 1px;
+  border: 0;
 }

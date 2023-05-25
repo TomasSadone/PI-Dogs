@@ -1,0 +1,30 @@
+.container::before {
+  content: '';
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-dark-green),
+    var(--color-light-green)
+  );
+  display: block;
+}
+.container {
+  position: relative;
+}
+.img {
+  justify-self: center;
+
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.temperaments {
+  background-color: var(--color-light-green);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: var(--color-background);
+}

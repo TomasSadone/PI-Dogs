@@ -4,6 +4,7 @@
   align-items: center;
 }
 .label {
+  border: none;
   font-size: 18px;
   font-weight: 600;
 }
@@ -20,4 +21,15 @@
   .input {
     width: auto;
   }
+}
+
+.deleteSearch {
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  /* background-color: #ff5555; */
+  background-color: var(--color-text);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
 }

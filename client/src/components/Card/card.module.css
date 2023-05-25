@@ -1,0 +1,33 @@
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* gap: 1rem; */
+  /* max-width: 320px; */
+  --flow-space: 0.5rem;
+}
+.img {
+  border-radius: 30px;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+.imgContainer {
+  border-radius: 30px;
+  background-color: black;
+  position: relative;
+}
+.defaultImage {
+  opacity: 0.4;
+}
+.imgText {
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

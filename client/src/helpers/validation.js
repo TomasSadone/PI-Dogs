@@ -18,38 +18,61 @@ const validation = (
   event
 ) => {
   const errors = {};
-
-  if (event.target.name.includes('Height')) {
-    if (Number(minHeight) >= Number(maxHeight))
-      errors.height = 'La altura mínima debe ser menor a la máxima';
-    if (!numberRegex.test(minHeight) || !numberRegex.test(maxHeight))
+  if (minHeight.length && maxHeight.length) {
+    if (!numberRegex.test(minHeight) || !numberRegex.test(maxHeight)) {
       errors.height = 'Altura mínima y altura máxima deben ser numeros';
+    } else if (Number(minHeight) >= Number(maxHeight)) {
+      errors.height = 'La altura mínima debe ser mayor a la máxima';
+    } else {
+      delete errors.height;
+    }
   }
-  if (event.target.name.includes('Weight')) {
-    if (Number(minWeight) >= Number(maxWeight))
-      errors.weight = 'El peso mínimo debe ser menor al máximo';
-    if (!numberRegex.test(minWeight) || !numberRegex.test(maxWeight))
+
+  if (minWeight.length && maxWeight.length) {
+    if (Number(minWeight) >= Number(maxWeight)) {
+      errors.weight = 'El peso mínimo debe ser mayor al máximo';
+    } else if (!numberRegex.test(minWeight) || !numberRegex.test(maxWeight)) {
       errors.weight = 'Peso mínimo y peso máximo deben ser numeros';
+    } else {
+      delete errors.weight;
+    }
   }
-  if (event.target.name.includes('life_span')) {
-    if (Number(min_life_span) >= Number(max_life_span))
-      errors.life_span = 'Expectativa mínima debe ser menor a la máxima';
-    if (!numberRegex.test(min_life_span) || !numberRegex.test(max_life_span))
+
+  if (min_life_span.length && max_life_span.length) {
+    if (Number(min_life_span) >= Number(max_life_span)) {
+      errors.life_span = 'Expectativa mínima debe ser mayor a la máxima';
+    } else if (
+      !numberRegex.test(min_life_span) ||
+      !numberRegex.test(max_life_span)
+    ) {
       errors.life_span =
         'Expectativa mínima y expectativa máxima deben ser numeros';
+    } else {
+      delete errors.life_span;
+    }
   }
-  if (event.target.name === 'name') {
-    if (!stringRegex.test(name))
+
+  if (name.length) {
+    if (!stringRegex.test(name)) {
       errors.name = 'Raza debe contener letras y espacios';
+    } else {
+      delete errors.name;
+    }
   }
-  if (event.target.name === 'temperaments') {
-    if (!temperamentsRegex.test(temperaments))
+  if (temperaments.length) {
+    if (!temperamentsRegex.test(temperaments)) {
       errors.temperaments =
         'Los temperamentos deben ser palabras separadas por espacios';
+    } else {
+      delete errors.temperaments;
+    }
   }
-  if (event.target.name === 'image') {
-    if (!imageRegex.test(image))
+  if (image.length) {
+    if (!imageRegex.test(image)) {
       errors.image = 'Debe introducir un URL de una imagen';
+    } else {
+      delete errors.image;
+    }
   }
 
   return errors;

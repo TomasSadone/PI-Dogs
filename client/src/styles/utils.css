@@ -4,8 +4,10 @@
   --color-text: #555555;
   --color-light-green: #56c596;
   --color-dark-green: #329d9c;
+  --color-error: #ff5555;
   --gap: 1.5rem;
   --minWidth: 240px;
+
   /* --color-dark: #424e6e;
   --color-medium: #586994;
   --color-light: #ced8f2;
@@ -17,22 +19,28 @@
 
 /* FONT SIZES */
 
+/* LA PROXIMA CAMBIAR ESTAS A fs0875 fs1 fs1125 todo con rems */
+
 .fsSmall {
   font-size: 14px;
 }
 
+/* LA PROXIMA CAMBIAR ESTAS A fs0875 fs1 fs1125 todo con rems */
 .fsMedium {
   font-size: 16px;
 }
 
+/* LA PROXIMA CAMBIAR ESTAS A fs0875 fs1 fs1125 todo con rems */
 .fsLarge {
   font-size: 18px;
 }
 
+/* LA PROXIMA CAMBIAR ESTAS A fs0875 fs1 fs1125 todo con rems */
 .fsXl {
   font-size: 24px;
 }
 
+/* LA PROXIMA CAMBIAR ESTAS A fs0875 fs1 fs1125 todo con rems */
 .fsXxl {
   font-size: 64px;
 }
@@ -79,6 +87,27 @@
 .mt25 {
   margin-top: 2.5rem;
 }
+.mb1 {
+  margin-bottom: 1rem;
+}
+.mb125 {
+  margin-bottom: 1.25rem;
+}
+
+.mb15 {
+  margin-bottom: 1.5rem;
+}
+.mb2 {
+  margin-bottom: 2rem;
+}
+
+.mb25 {
+  margin-bottom: 2.5rem;
+}
+
+.mAuto {
+  margin: 0 auto;
+}
 
 /* CONTAINER */
 
@@ -92,6 +121,9 @@
 
 .colorBackground {
   color: var(--color-background);
+}
+.bgColorBackground {
+  background-color: var(--color-background);
 }
 
 .colorTitles {
@@ -125,6 +157,10 @@
   display: flex;
   gap: var(--gap);
   align-items: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
 }
 
 .flexBetween {

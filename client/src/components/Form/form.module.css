@@ -1,0 +1,3 @@
+input.inputError {
+  border: 1.5px solid var(--color-error);
+}

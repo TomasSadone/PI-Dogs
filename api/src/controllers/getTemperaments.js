@@ -28,6 +28,7 @@ const getTemperamentsFirstTime = async () => {
 const getTemperaments = async () => {
   //add Temperaments from API to SQL only in first call
   if (counter === 0) {
+    console.log('first');
     counter++;
     const temperaments = await getTemperamentsFirstTime();
     await Promise.all(

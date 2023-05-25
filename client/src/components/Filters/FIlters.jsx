@@ -111,10 +111,11 @@ export const Filters = ({ setError, setLoading }) => {
     <div className={style.layout}>
       <div className={style.filters}>
         <div className='grid'>
-          <label className='fw500 fsLarge' htmlFor='temperament'>
+          <label className='fw500 ' htmlFor='temperament'>
             Filtrar por temperamento
           </label>
           <select
+            className='fsSmall colorText'
             placeholder='Temperamento'
             value={filters.temperaments}
             onChange={handleFiltersChange}
@@ -130,10 +131,11 @@ export const Filters = ({ setError, setLoading }) => {
           </select>
         </div>
         <div className='grid'>
-          <label className='fw500 fsLarge' htmlFor='user_created'>
+          <label className='fw500 ' htmlFor='user_created'>
             Filtrar segun origen
           </label>
           <select
+            className='fsSmall colorText'
             value={filters.user_created}
             onChange={handleFiltersChange}
             name='user_created'
@@ -146,10 +148,15 @@ export const Filters = ({ setError, setLoading }) => {
         </div>
       </div>
       <div className='grid'>
-        <label className='fw500 fsLarge' htmlFor='alphabeticOrder'>
+        <label className='fw500 ' htmlFor='alphabeticOrder'>
           Orden
         </label>
-        <select onChange={handleFiltersChange} name='order' id=''>
+        <select
+          className='fsSmall colorText'
+          onChange={handleFiltersChange}
+          name='order'
+          id=''
+        >
           <option value='Alfabetico ascendente'>Alfabetico ascendente</option>
           <option value='Alfabetico descendente'>Alfabetico descendente</option>
           <option value='Peso ascendente'>Peso ascendente</option>

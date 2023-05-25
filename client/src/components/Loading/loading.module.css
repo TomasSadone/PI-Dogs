@@ -1,0 +1,27 @@
+.loaderContainer {
+  display: grid;
+  place-items: center;
+  min-height: 55vh;
+}
+
+.loader {
+  border: 11px solid #f3f3f3; /* Light grey */
+  border-top: 11px solid var(--color-light-green); /* Blue */
+  border-radius: 50%;
+  width: 100px;
+  aspect-ratio: 1;
+  animation: spin 2s linear infinite;
+}
+
+.p-p-l-cart-content {
+  margin-top: 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

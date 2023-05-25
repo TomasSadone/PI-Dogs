@@ -4,13 +4,13 @@ import styles from './navbar.module.css';
 
 export const Navbar = () => {
   return (
-    <div className={styles.navbar}>
+    <header className={styles.navbar}>
       <div className='container flex flexBetween'>
         <div className={`flex ${styles.logoContainer}`}>
-          <img className={styles.logo} src='/logo-navbar.svg' alt='logo' />
+          <img className={styles.logo} src='/logo-landing.png' alt='logo' />
           <h2 className={styles.title}>Doggypedia</h2>
         </div>
-        <div className='flex '>
+        <nav className='flex '>
           <NavLink
             to={'/home'}
             className={({ isActive }) =>
@@ -27,8 +27,8 @@ export const Navbar = () => {
           >
             Post
           </NavLink>
-        </div>
+        </nav>
       </div>
-    </div>
+    </header>
   );
 };

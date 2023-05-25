@@ -18,7 +18,7 @@ function App() {
     <Provider store={store}>
       {pathname !== '/' && <Navbar />}
       {/* quizas la navbar no vaya aca y vaya en una home solo */}
-      <div className='App flow'>
+      <div className='App flow bgColorBackground'>
         <Routes>
           <Route path='/' element={<Landing />} />
           <Route path='/home' element={<Home />} />

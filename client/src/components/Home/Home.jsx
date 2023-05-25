@@ -17,10 +17,9 @@ export const Home = () => {
 
   const [error, setError] = useState({ error: false, message: '' });
   const [loading, setLoading] = useState(true);
-
   return (
     <main className='flow '>
-      <div className='imgContainer'>
+      <header className='imgContainer'>
         <img
           className={`${styles.homeHeroImg} heroImg`}
           src='/bg-landing.png'
@@ -30,14 +29,16 @@ export const Home = () => {
           <h2>¿Estás en búsqueda de un amigo peludito?</h2>
           <p>¡Conoce todo sobre razas de perros en Doggypedia!</p>
         </div>
-      </div>
+      </header>
       <div className='container mt1 flow'>
         <Search setError={setError} setLoading={setLoading} />
         {/* componente filters, recibe setError*/}
         <Filters setError={setError} setLoading={setLoading} />
 
         <Cards loading={loading} error={error} />
-        {dogPages.length > 1 ? <Pagination /> : null}
+        {dogPages.length > 1 && !error.error && !loading ? (
+          <Pagination />
+        ) : null}
       </div>
     </main>
   );

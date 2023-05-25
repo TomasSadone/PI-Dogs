@@ -19,14 +19,31 @@ const getDogsByBreed = async (breed) => {
         [Op.like]: `%${breed}%`,
       },
     },
-    include: Temperament,
+    include: { model: Temperament, as: 'temperament' },
   });
   dogPusher(sqlDogs, dogs);
-
-  // console.log(`${BASE_URL}/search?q=${breed}?api_key=${API_KEY}`);
-
   const { data: apiDogs } = await axios(`${BASE_URL}/search?q=${breed}`);
-  dogPusher(apiDogs, dogs);
+  console.log(apiDogs);
+  const dogsToPush = await Promise.all(
+    apiDogs.map(async (apiDog) => {
+      if (apiDog.reference_image_id) {
+        const { data: imgData } = await axios(
+          `https://api.thedogapi.com/v1/images/${apiDog.reference_image_id}`
+        );
+        return {
+          ...apiDog,
+          image: {
+            url: imgData.url,
+          },
+        };
+      }
+      return apiDog;
+    })
+  );
+  console.log('first');
+  console.log(dogsToPush);
+
+  dogPusher(dogsToPush, dogs);
 
   if (!dogs.length) throw Error('No se encontro esa raza de perros');
 

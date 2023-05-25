@@ -16,6 +16,9 @@ export const Search = ({ setError, setLoading }) => {
 
   const searchValidation = (search) => {
     let typeOfSearch;
+    if (!search.length) {
+      return setSearchError(false);
+    }
     if (/^\d+$/.test(search)) {
       typeOfSearch = 'numbers';
       setSearchError(false);
@@ -67,33 +70,40 @@ export const Search = ({ setError, setLoading }) => {
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
+    searchValidation(event.target.value);
   };
 
   const handleDeleteSearch = () => {
     setExistingSearch(false);
     setInputValue('');
     setError({ error: false, message: '' });
+    setSearchError(false);
     dispatch(setPageToOne());
     dispatch(setSearch([]));
   };
-
   return (
-    <div className={`${styles.search}`}>
-      <label className={styles.label}>Encuentra a tu compañero ideal:</label>
-      <form className={styles.form} onSubmit={handleSubmit} action=''>
-        <input
-          placeholder='Buscar...'
-          className={'input'}
-          value={inputValue}
-          onChange={handleInputChange}
-          type='text'
-        />
-      </form>
+    <div className='flow'>
+      <div className={`${styles.search}`}>
+        <label className={styles.label}>Encuentra a tu compañero ideal:</label>
+        <form className={styles.form} onSubmit={handleSubmit} action=''>
+          <input
+            placeholder='Buscar...'
+            className={'input'}
+            value={inputValue}
+            onChange={handleInputChange}
+            type='text'
+          />
+        </form>
+      </div>
       {searchError ? (
-        <span>La busqueda debe ser de solo letras, o solo numeros</span>
+        <p className='errorMessagge'>
+          La busqueda debe ser de solo letras, o solo numeros
+        </p>
       ) : null}
       {existingSearch ? (
-        <button onClick={handleDeleteSearch}>Borrar búsqueda</button>
+        <button className={styles.deleteSearch} onClick={handleDeleteSearch}>
+          Borrar búsqueda
+        </button>
       ) : null}
     </div>
   );
