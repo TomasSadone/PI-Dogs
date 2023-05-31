@@ -7,8 +7,6 @@ const throwError = () => {
   throw Error('Esa raza ya existe en la base de datos');
 };
 
-// VER SI LO DEJO ASI O LE PONGO UN ID MINIMO ARBITRARIO A LOS POSTEADOS, YA QUE TARDA MUCHO
-
 const postDog = async (
   name,
   image,
@@ -51,12 +49,11 @@ const postDog = async (
   if (!created) throwError();
 
   for (const temperament of temperaments) {
-    const [newTemperament] = await Temperament.findOrCreate({
+    console.log(temperament);
+    const newTemperament = await Temperament.findAll({
       where: { name: temperament },
-      defaults: {
-        name: temperament.trim(),
-      },
     });
+    console.log(newTemperament);
     await dog.addTemperament(newTemperament);
   }
   return dog;

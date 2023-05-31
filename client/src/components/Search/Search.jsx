@@ -55,6 +55,7 @@ export const Search = ({ setError, setLoading }) => {
       setLoading(true);
       setError({ error: false, message: '' });
       try {
+        console.log(value);
         const { data } = await axios.get(endpoint, {
           params: { breed: value },
         });
@@ -62,6 +63,7 @@ export const Search = ({ setError, setLoading }) => {
         dispatch(setSearch(data));
         setLoading(false);
       } catch (error) {
+        console.log('...............', error.message);
         setLoading(false);
         setError({ error: true, message: error.message });
       }

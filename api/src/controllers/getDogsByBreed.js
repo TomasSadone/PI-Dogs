@@ -1,6 +1,6 @@
 const axios = require('axios');
 const { Dog, Temperament } = require('../db');
-const { Op } = require('sequelize');
+const { Op, Sequelize } = require('sequelize');
 const dogPusher = require('../helpers/dogPusher');
 require('dotenv').config();
 const { BASE_URL, API_KEY } = process.env;
@@ -16,14 +16,15 @@ const getDogsByBreed = async (breed) => {
   const sqlDogs = await Dog.findAll({
     where: {
       name: {
-        [Op.like]: `%${breed}%`,
+        [Op.like]: `%${breed.toLowerCase()}%`,
       },
     },
     include: { model: Temperament, as: 'temperament' },
   });
+
   dogPusher(sqlDogs, dogs);
   const { data: apiDogs } = await axios(`${BASE_URL}/search?q=${breed}`);
-  console.log(apiDogs);
+
   const dogsToPush = await Promise.all(
     apiDogs.map(async (apiDog) => {
       if (apiDog.reference_image_id) {
@@ -40,8 +41,6 @@ const getDogsByBreed = async (breed) => {
       return apiDog;
     })
   );
-  console.log('first');
-  console.log(dogsToPush);
 
   dogPusher(dogsToPush, dogs);
 

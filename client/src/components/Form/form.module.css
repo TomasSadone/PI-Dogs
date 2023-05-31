@@ -1,3 +1,7 @@
 input.inputError {
   border: 1.5px solid var(--color-error);
 }
+
+select.select {
+  padding: 0.3rem 0.5rem;
+}

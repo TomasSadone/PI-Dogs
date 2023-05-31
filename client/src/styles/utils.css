@@ -21,6 +21,10 @@
 
 /* LA PROXIMA CAMBIAR ESTAS A fs0875 fs1 fs1125 todo con rems */
 
+.fsXs {
+  font-size: 12px;
+}
+
 .fsSmall {
   font-size: 14px;
 }

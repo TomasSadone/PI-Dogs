@@ -19,6 +19,7 @@ router.get('/', async (req, res) => {
     const dogs = await getDogsByBreed(breed);
     return res.status(200).json(dogs);
   } catch (error) {
+    console.log(error.message);
     return res.status(404).send(error.message);
   }
 });

@@ -59,14 +59,14 @@ const validation = (
       delete errors.name;
     }
   }
-  if (temperaments.length) {
-    if (!temperamentsRegex.test(temperaments)) {
-      errors.temperaments =
-        'Los temperamentos deben ser palabras separadas por espacios';
-    } else {
-      delete errors.temperaments;
-    }
-  }
+  // if (temperaments.length) {
+  //   if (!temperamentsRegex.test(temperaments)) {
+  //     errors.temperaments =
+  //       'Los temperamentos deben ser palabras separadas por espacios';
+  //   } else {
+  //     delete errors.temperaments;
+  //   }
+  // }
   if (image.length) {
     if (!imageRegex.test(image)) {
       errors.image = 'Debe introducir un URL de una imagen';

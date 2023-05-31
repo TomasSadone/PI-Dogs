@@ -41,7 +41,7 @@ export const Filters = ({ setError, setLoading }) => {
 
         if (dog.user_created) {
           return dog.temperament.some(
-            (temperament) => temperament === currentState.temperaments
+            (temperament) => temperament.name === currentState.temperaments
           );
         }
         return dog.temperament
@@ -51,10 +51,10 @@ export const Filters = ({ setError, setLoading }) => {
     }
 
     if (user_created !== 'Todos') {
-      if (user_created === 'true') {
+      if (user_created) {
         filteredDogs = filteredDogs.filter((dog) => dog.user_created);
       } else {
-        filteredDogs = filteredDogs.filter((dog) => dog.user_created !== true);
+        filteredDogs = filteredDogs.filter((dog) => !dog.user_created);
       }
     }
 
@@ -115,7 +115,7 @@ export const Filters = ({ setError, setLoading }) => {
             Filtrar por temperamento
           </label>
           <select
-            className='fsSmall colorText'
+            className='fsSmall colorText select'
             placeholder='Temperamento'
             value={filters.temperaments}
             onChange={handleFiltersChange}
@@ -135,7 +135,7 @@ export const Filters = ({ setError, setLoading }) => {
             Filtrar segun origen
           </label>
           <select
-            className='fsSmall colorText'
+            className='fsSmall colorText select'
             value={filters.user_created}
             onChange={handleFiltersChange}
             name='user_created'
@@ -152,7 +152,7 @@ export const Filters = ({ setError, setLoading }) => {
           Orden
         </label>
         <select
-          className='fsSmall colorText'
+          className='fsSmall colorText select'
           onChange={handleFiltersChange}
           name='order'
           id=''

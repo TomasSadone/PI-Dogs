@@ -18,10 +18,3 @@
     align-items: stretch;
   }
 }
-
-select {
-  width: 100%;
-  border: 1px solid rgba(85 85 85 / 0.5);
-  border-radius: 8px;
-  padding: 0.15rem 0.5rem;
-}

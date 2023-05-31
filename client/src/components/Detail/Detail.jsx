@@ -4,6 +4,7 @@ import axios from 'axios';
 import styles from './detail.module.css';
 import { Error } from '../Error/Error';
 import { Loading } from '../Loading/Loading';
+import { Tags } from '../Tags/Tags';
 
 export const Detail = () => {
   const { id } = useParams();
@@ -42,19 +43,18 @@ export const Detail = () => {
             <span className='colorText fw300'>{`ID: ${dog.id}`}</span>
             <hr />
             <h2>Temperamento:</h2>
-            <div className='flex gap1 wrap'>
-              {dog.user_created
-                ? dog.temperament.map((temp) => (
-                    <span className={`${styles.temperaments}`} key={temp.name}>
-                      {temp.name}
-                    </span>
-                  ))
-                : dog.temperament.split(', ').map((temp) => (
-                    <span className={`${styles.temperaments} `} key={temp}>
-                      {temp}
-                    </span>
-                  ))}
-            </div>
+            {dog.temperament ? (
+              dog.user_created ? (
+                <Tags temperaments={dog.temperament} userCreated={true} />
+              ) : (
+                <Tags
+                  temperaments={dog.temperament.split(', ')}
+                  userCreated={false}
+                />
+              )
+            ) : (
+              `No conocemos los temperamentos de este perro`
+            )}
             <div className='flex mt25'>
               <img src='/uil_weight.svg' alt='' />
               <span className='fwSmall colorText'>{`Entre ${dog.weight.metric} kg`}</span>

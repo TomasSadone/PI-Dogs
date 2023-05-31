@@ -20,9 +20,15 @@ export const Card = ({ dog }) => {
       </div>
       <h2>{name}</h2>
       <span>{`Peso ${weight.metric} kg`}</span>
-      <p className='fw300'>{`Este perro es: ${
-        user_created ? temperament.map((t) => t.name).join(', ') : temperament
-      }`}</p>
+      <p className='fw300'>
+        {temperament
+          ? `Este perro es: ${
+              user_created
+                ? temperament.map((t) => t.name).join(', ')
+                : temperament
+            }`
+          : `No conocemos los temperamentos de este perro`}
+      </p>
       <button className='button' onClick={() => navigate(`/dog/${id}`)}>
         Ver más
       </button>
