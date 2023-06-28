@@ -51,7 +51,7 @@ export const Filters = ({ setError, setLoading }) => {
     }
 
     if (user_created !== 'Todos') {
-      if (user_created) {
+      if (user_created === 'user') {
         filteredDogs = filteredDogs.filter((dog) => dog.user_created);
       } else {
         filteredDogs = filteredDogs.filter((dog) => !dog.user_created);
@@ -142,8 +142,8 @@ export const Filters = ({ setError, setLoading }) => {
             id=''
           >
             <option value='Todos'>Todos</option>
-            <option value='false'>Base de datos</option>
-            <option value='true'>Creados por el usuario</option>
+            <option value='database'>Base de datos</option>
+            <option value='user'>Creados por el usuario</option>
           </select>
         </div>
       </div>

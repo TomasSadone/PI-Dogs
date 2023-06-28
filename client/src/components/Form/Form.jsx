@@ -5,7 +5,6 @@ import validation from '../../helpers/validation';
 import { initializeApp } from '../../redux/actions';
 import styles from './form.module.css';
 import { getTemperaments } from '../../redux/actions';
-import { Tag } from '../Tag/Tag';
 import { Tags } from '../Tags/Tags';
 
 export const Form = () => {
@@ -23,6 +22,8 @@ export const Form = () => {
   const [dogData, setDogData] = useState(initialState);
   const [selectedTemperaments, setSelectedTemperaments] = useState([]);
   const [errors, setErrors] = useState({});
+
+  //Estados para manejar fases de posteo (error, succes, procesando)
   const [postError, setPostError] = useState(false);
   const [postSuccess, setPostSuccess] = useState(false);
   const [postProcessing, setPostProcessing] = useState(false);
@@ -44,6 +45,7 @@ export const Form = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setPostProcessing(true);
+    //exportar toda la logica de crear el dog a una funcion
     const {
       name,
       minHeight,
@@ -75,10 +77,10 @@ export const Form = () => {
       await axios.post(endpoint, dog);
       setDogData(initialState);
       setPostProcessing(false);
-      dispatch(initializeApp());
       setPostSuccess(true);
       setSelectedTemperaments([]);
       postError && setPostError(false);
+      dispatch(initializeApp());
     } catch (err) {
       setPostError(true);
       setPostProcessing(false);
