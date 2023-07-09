@@ -32,6 +32,7 @@ export const Filters = ({ setError, setLoading }) => {
     //no desestructurar temperaments pq esta el que viene de redux
     const { user_created, order } = currentState;
 
+    //ver si se filtra sobre todos los perros, o sobre los que ya hay filtrados
     let filteredDogs = search.length ? search : allDogs;
     filteredDogs.length && setLoading(false);
 
