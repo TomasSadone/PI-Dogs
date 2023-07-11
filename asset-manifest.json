@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/PI-Dogs/static/css/main.e814a2db.chunk.css",
-    "main.js": "/PI-Dogs/static/js/main.8893354f.chunk.js",
-    "main.js.map": "/PI-Dogs/static/js/main.8893354f.chunk.js.map",
+    "main.js": "/PI-Dogs/static/js/main.1cc1b984.chunk.js",
+    "main.js.map": "/PI-Dogs/static/js/main.1cc1b984.chunk.js.map",
     "runtime-main.js": "/PI-Dogs/static/js/runtime-main.8926fa4c.js",
     "runtime-main.js.map": "/PI-Dogs/static/js/runtime-main.8926fa4c.js.map",
-    "static/js/2.dd691f01.chunk.js": "/PI-Dogs/static/js/2.dd691f01.chunk.js",
-    "static/js/2.dd691f01.chunk.js.map": "/PI-Dogs/static/js/2.dd691f01.chunk.js.map",
+    "static/js/2.90c8a7e6.chunk.js": "/PI-Dogs/static/js/2.90c8a7e6.chunk.js",
+    "static/js/2.90c8a7e6.chunk.js.map": "/PI-Dogs/static/js/2.90c8a7e6.chunk.js.map",
     "static/js/3.8d4b532b.chunk.js": "/PI-Dogs/static/js/3.8d4b532b.chunk.js",
     "static/js/3.8d4b532b.chunk.js.map": "/PI-Dogs/static/js/3.8d4b532b.chunk.js.map",
     "index.html": "/PI-Dogs/index.html",
     "static/css/main.e814a2db.chunk.css.map": "/PI-Dogs/static/css/main.e814a2db.chunk.css.map",
-    "static/js/2.dd691f01.chunk.js.LICENSE.txt": "/PI-Dogs/static/js/2.dd691f01.chunk.js.LICENSE.txt"
+    "static/js/2.90c8a7e6.chunk.js.LICENSE.txt": "/PI-Dogs/static/js/2.90c8a7e6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8926fa4c.js",
-    "static/js/2.dd691f01.chunk.js",
+    "static/js/2.90c8a7e6.chunk.js",
     "static/css/main.e814a2db.chunk.css",
-    "static/js/main.8893354f.chunk.js"
+    "static/js/main.1cc1b984.chunk.js"
   ]
 }
