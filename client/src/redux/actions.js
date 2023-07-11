@@ -10,7 +10,7 @@ import {
 } from './action-types';
 import { sliceIntoPages } from '../helpers/sliceIntoPages';
 
-const endpoint = 'http://localhost:3001';
+const endpoint = 'https://doggypedia-backend.onrender.com';
 // Acción para obtener los perros desde la API
 export const getAllDogs = () => {
   return async (dispatch) => {

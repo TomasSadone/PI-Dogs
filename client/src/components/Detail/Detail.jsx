@@ -13,7 +13,9 @@ export const Detail = () => {
   const [loading, setLoading] = useState(true);
   const getDog = useCallback(async () => {
     try {
-      const { data } = await axios(`http://localhost:3001/dogs/${id}`);
+      const { data } = await axios(
+        `https://doggypedia-backend.onrender.com/dogs/${id}`
+      );
       setDog(data[0]);
       setLoading(false);
       setError(false);

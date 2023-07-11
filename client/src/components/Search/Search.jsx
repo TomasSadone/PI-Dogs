@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { setPageToOne, setSearch } from '../../redux/actions';
 import styles from './search.module.css';
 
-const endpoint = 'http://localhost:3001/dogs';
+const endpoint = 'https://doggypedia-backend.onrender.com/dogs';
 
 export const Search = ({ setError, setLoading }) => {
   //para validar el campo
