@@ -11,6 +11,7 @@ export const Detail = () => {
   const [dog, setDog] = useState({});
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
+  console.log('probando build');
   const getDog = useCallback(async () => {
     try {
       const { data } = await axios(
