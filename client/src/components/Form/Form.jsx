@@ -8,8 +8,8 @@ import { getTemperaments } from '../../redux/actions';
 import { Tags } from '../Tags/Tags';
 
 export const Form = () => {
-  // const endpoint = 'https://doggypedia-backend.onrender.com/dogs';
-  const endpoint = 'http://localhost:3001/dogs';
+  const endpoint = 'https://doggypedia-backend.onrender.com/dogs';
+  // const endpoint = 'http://localhost:3001/dogs';
   const initialState = {
     name: '',
     minHeight: '',
