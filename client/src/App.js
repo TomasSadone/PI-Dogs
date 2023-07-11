@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { Landing } from './components/Landing/Landing';
 import store from './redux/store';
@@ -19,12 +19,14 @@ function App() {
       {pathname !== '/' && <Navbar />}
       {/* quizas la navbar no vaya aca y vaya en una home solo */}
       <div className='App flow bgColorBackground'>
-        <Routes>
-          <Route path='/' element={<Landing />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/post' element={<Form />} />
-          <Route path='/dog/:id' element={<Detail />} />
-        </Routes>
+        <HashRouter>
+          <Routes>
+            <Route path='/' element={<Landing />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/post' element={<Form />} />
+            <Route path='/dog/:id' element={<Detail />} />
+          </Routes>
+        </HashRouter>
       </div>
     </Provider>
   );
