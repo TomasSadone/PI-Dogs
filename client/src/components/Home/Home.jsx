@@ -6,6 +6,7 @@ import { Search } from '../Search/Search';
 import { Filters } from '../Filters/FIlters';
 import { initializeApp } from '../../redux/actions';
 import styles from './home.module.css';
+import bgHome from '../../Images/bg-landing.png';
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ export const Home = () => {
       <header className='imgContainer'>
         <img
           className={`${styles.homeHeroImg} heroImg`}
-          src='PI-Dogs/bg-landing.png'
+          src={bgHome}
           alt='perro de fondo'
         />
         <div className='heroContent  textAlignCenter flow colorTitlesWhite'>

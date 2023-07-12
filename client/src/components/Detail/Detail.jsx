@@ -5,6 +5,9 @@ import styles from './detail.module.css';
 import { Error } from '../Error/Error';
 import { Loading } from '../Loading/Loading';
 import { Tags } from '../Tags/Tags';
+import weight from '../../Images/uil_weight.svg';
+import heartRate from '../../Images/ritmo-cardiaco.svg';
+import height from '../../Images/height.svg';
 
 export const Detail = () => {
   const { id } = useParams();
@@ -60,15 +63,15 @@ export const Detail = () => {
               `No conocemos los temperamentos de este perro`
             )}
             <div className='flex mt25'>
-              <img src='PI-Dogs/uil_weight.svg' alt='' />
+              <img src={weight} alt='' />
               <span className='fwSmall colorText'>{`Entre ${dog.weight.metric} kg`}</span>
             </div>
             <div className='flex mt2'>
-              <img src='PI-Dogs/ritmo-cardiaco.svg' alt='' />
+              <img src={heartRate} alt='' />
               <span className='fwSmall colorText'>{`${dog.life_span}`}</span>
             </div>
             <div className='flex mt2'>
-              <img src='PI-Dogs/height.svg' alt='' />
+              <img src={height} alt='' />
               <span className='fwSmall colorText'>{`Entre ${dog.height.metric} cm`}</span>
             </div>
           </div>
