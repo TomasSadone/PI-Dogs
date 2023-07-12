@@ -7,12 +7,16 @@ import styles from './pagination.module.css';
 export const Pagination = () => {
   const { currentPage, dogPages } = useSelector((state) => state);
   const dispatch = useDispatch();
+  const handleClicks = (fn) => {
+    dispatch(fn());
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  };
   return (
     <div className={styles.pagination}>
       <button
         className='button buttonPagination'
         disabled={currentPage === 1}
-        onClick={() => dispatch(setPrevPage())}
+        onClick={() => handleClicks(setPrevPage)}
       >
         {'<'}
       </button>
@@ -20,7 +24,7 @@ export const Pagination = () => {
       <button
         className='button buttonPagination'
         disabled={currentPage === dogPages.length}
-        onClick={() => dispatch(setNextPage())}
+        onClick={() => handleClicks(setNextPage)}
       >
         {'>'}
       </button>
