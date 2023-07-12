@@ -7,14 +7,14 @@ export const Landing = () => {
     <div className={`imgContainer`}>
       <img
         className={`heroImg heroFullHeight`}
-        src='/bg-landing.png'
+        src='PI-Dogs/bg-landing.png'
         alt='dog in the background'
       />
       <div className={`heroContent`}>
         <div className={`flow textAlignCenter colorTitlesWhite`}>
           <img
             className={`${styles.logo}`}
-            src='/logo-landing.png'
+            src='PI-Dogs/logo-landing.png'
             alt='logo'
           />
           <h1 className='fsXxl'>Doggypedia</h1>

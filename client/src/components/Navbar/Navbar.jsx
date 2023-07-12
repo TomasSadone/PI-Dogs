@@ -7,7 +7,11 @@ export const Navbar = () => {
     <header className={styles.navbar}>
       <div className='container flex flexBetween'>
         <div className={`flex ${styles.logoContainer}`}>
-          <img className={styles.logo} src='/logo-landing.png' alt='logo' />
+          <img
+            className={styles.logo}
+            src='PI-Dogs/logo-landing.png'
+            alt='logo'
+          />
           <h2 className={styles.title}>Doggypedia</h2>
         </div>
         <nav className='flex '>

@@ -15,8 +15,8 @@ export const Detail = () => {
   const getDog = useCallback(async () => {
     try {
       const { data } = await axios(
-        // `https://doggypedia-backend.onrender.com/dogs/${id}`
-        `http://localhost:3001/dogs/${id}`
+        `https://doggypedia-backend.onrender.com/dogs/${id}`
+        // `http://localhost:3001/dogs/${id}`
       );
       setDog(data[0]);
       setLoading(false);
@@ -60,15 +60,15 @@ export const Detail = () => {
               `No conocemos los temperamentos de este perro`
             )}
             <div className='flex mt25'>
-              <img src='/uil_weight.svg' alt='' />
+              <img src='PI-Dogs/uil_weight.svg' alt='' />
               <span className='fwSmall colorText'>{`Entre ${dog.weight.metric} kg`}</span>
             </div>
             <div className='flex mt2'>
-              <img src='/ritmo-cardiaco.svg' alt='' />
+              <img src='PI-Dogs/ritmo-cardiaco.svg' alt='' />
               <span className='fwSmall colorText'>{`${dog.life_span}`}</span>
             </div>
             <div className='flex mt2'>
-              <img src='/height.svg' alt='' />
+              <img src='PI-Dogs/height.svg' alt='' />
               <span className='fwSmall colorText'>{`Entre ${dog.height.metric} cm`}</span>
             </div>
           </div>

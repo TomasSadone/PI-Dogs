@@ -22,7 +22,7 @@ export const Home = () => {
       <header className='imgContainer'>
         <img
           className={`${styles.homeHeroImg} heroImg`}
-          src='/bg-landing.png'
+          src='PI-Dogs/bg-landing.png'
           alt='perro de fondo'
         />
         <div className='heroContent  textAlignCenter flow colorTitlesWhite'>
