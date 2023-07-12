@@ -16,6 +16,8 @@ const getTemperamentsFirstTime = async () => {
 
     const arrOfRawTemps = rawTemperament.split(',').map((temp) => temp.trim());
     // arrOfRawTemps = [stubborn, happy]
+
+    //creo que el problema esta aca:
     arrOfRawTemps.forEach((rawTemperament) => {
       if (!temperaments.find((temperament) => temperament === rawTemperament)) {
         temperaments.push(rawTemperament);
@@ -27,18 +29,18 @@ const getTemperamentsFirstTime = async () => {
 
 const getTemperaments = async () => {
   //add Temperaments from API to SQL only in first call
-  if (counter === 0) {
-    console.log('first');
-    counter++;
-    const temperaments = await getTemperamentsFirstTime();
-    await Promise.all(
-      temperaments.map(async (temperament) => {
-        await Temperament.create({ name: temperament });
-      })
-    );
+  // if (counter === 0) {
+  //   console.log('first');
+  //   counter++;
+  //   const temperaments = await getTemperamentsFirstTime();
+  //   await Promise.all(
+  //     temperaments.map(async (temperament) => {
+  //       await Temperament.create({ name: temperament });
+  //     })
+  //   );
 
-    // return temperaments;
-  }
+  //   // return temperaments;
+  // }
   const temperaments = await Temperament.findAll({
     order: [['name', 'ASC']],
   });
