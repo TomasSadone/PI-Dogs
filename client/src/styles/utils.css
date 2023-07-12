@@ -194,6 +194,11 @@
   display: grid;
 }
 
+.gridAutoColumnsFill {
+  grid-template-columns: repeat(auto-fill, minmax(var(--minWidth), 1fr));
+  display: grid;
+}
+
 .gridAutoColumnsItemLarge {
   --minWidth: 300px;
 }

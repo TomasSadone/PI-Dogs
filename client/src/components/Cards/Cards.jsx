@@ -13,7 +13,9 @@ export const Cards = ({ error, loading }) => {
       {error.error && <Error />}
       {loading && <Loading />}
       {!loading && !error.error && (
-        <div className={` mb2 gridAutoColumns ${styles.layout}`}>
+        <div
+          className={` mb2 gridAutoColumnsFill gridAutoColumnsItemLarge ${styles.layout}`}
+        >
           {dogPages[currentPage - 1]
             ? dogPages[currentPage - 1].map((dog) => {
                 return <Card key={dog.id} dog={dog} />;

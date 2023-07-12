@@ -8,12 +8,13 @@
   --flow-space: 0.5rem;
 }
 .img {
-  border-radius: 30px;
+  border-radius: 8px;
   aspect-ratio: 4/3;
   object-fit: cover;
+  width: 100%;
 }
 .imgContainer {
-  border-radius: 30px;
+  border-radius: 8px;
   background-color: black;
   position: relative;
 }
@@ -30,4 +31,13 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.temperaments {
+  line-height: 1.5rem;
+  height: 3rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
